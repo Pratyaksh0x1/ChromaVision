@@ -63,19 +63,44 @@ chromavision_local/
 
 ## Model files
 
-### Where to get them
-Kaggle mein final run ke **Output tab** se download karo (folder `chromavision_v4_outputs`):
+### Download from Hugging Face
 
-| File | Location in Output tab |
-|---|---|
-| `colorization_r34.pt` | Root folder (direct) |
-| `restoration_r34.pt` | Root folder (direct) |
-| `RealESRGAN_x4plus.pth` | `weights/` subfolder |
+The three model weights are hosted in the public
+[ChromaVision Hugging Face model repository](https://huggingface.co/pratyaksh0x1/chromavision-models).
+Download them into the project's `models/` folder so ChromaVision can find
+them using its default paths.
+
+Install the Hugging Face CLI if needed:
+
+```powershell
+python -m pip install -U huggingface_hub
+```
+
+Run these commands from the project root:
+
+```powershell
+hf download pratyaksh0x1/chromavision-models restoration_r34.pt --local-dir .\models
+hf download pratyaksh0x1/chromavision-models colorization_r34.pt --local-dir .\models
+hf download pratyaksh0x1/chromavision-models RealESRGAN_x4plus.pth --local-dir .\models
+```
+
+The repo is public, so authentication is not required to download these files.
+Alternatively, download the files individually from the Hugging Face
+[Files and versions page](https://huggingface.co/pratyaksh0x1/chromavision-models/tree/main).
+
+### Training notebook and dataset references
+
+The Kaggle notebook associated with this project is
+[ChromaVision on Kaggle](https://www.kaggle.com/code/pratyakshtomar0x1/chromavision).
+The training-data references are documented in the Hugging Face
+[model card](https://huggingface.co/pratyaksh0x1/chromavision-models).
 
 ### Important
-- `*_last.pt` files **don't work** directly - they're training checkpoints only
-- Any missing model file causes its step to be skipped (app will warn)
-- Always use the final `.pt` files (not `_last.pt`)
+- `*_last.pt` files are training checkpoints and are not the final weights expected by the app.
+- If a model is missing, its processing step may be skipped and the app will warn.
+- The repository contains files with different origins and licensing terms. Review the Hugging Face
+  [`LICENSES.md`](https://huggingface.co/pratyaksh0x1/chromavision-models/blob/main/LICENSES.md)
+  before reusing or redistributing any checkpoint. Public availability does not by itself grant reuse rights.
 
 ---
 
