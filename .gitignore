@@ -1,0 +1,32 @@
+# Python environments and caches
+venv/
+.venv/
+.agents/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.local
+
+# Generated results and logs
+results/
+*.log
+npm-debug.log*
+
+# Large model weights (download or provide separately)
+models/*.pt
+models/*.pth
+models/weights/*.pth

@@ -1,0 +1,393 @@
+/* ==========================================================================
+   CHROMA VISION DESIGN SYSTEM
+   Inspired by Boy-Coy Studio (Awwwards) + Pomegranate Health + ReactBits
+   ========================================================================== */
+
+:root {
+  /* Boy-Coy Cherry Coral & Palette */
+  --cherry-hero: #E84855;
+  --cherry-vivid: #FF2E63;
+  --cherry-dark: #1E080F;
+  --cherry-burgundy: #820024;
+  --cherry-pomegranate: #9A031E;
+  --cherry-soft: #FFAAB8;
+  --cherry-blush: #FFEAEF;
+
+  /* Cream & Paper Surfaces */
+  --bg-cream: #FAF6EF;
+  --bg-oatmeal: #EDE7DC;
+  --bg-card: #FFFFFF;
+  --bg-card-muted: #F3EFE6;
+
+  /* Playful Accents */
+  --accent-yellow: #FFD166;
+  --accent-blue: #2563EB;
+  --accent-green: #10B981;
+  --accent-teal: #06D6A0;
+
+  /* Text Colors */
+  --text-dark: #1E080F;
+  --text-medium: #4A2B35;
+  --text-muted: #7E656D;
+  --text-light: #FFFFFF;
+
+  /* Borders & Shadows */
+  --border-thick: 2.5px solid #1E080F;
+  --border-subtle: 1.5px solid rgba(30, 8, 15, 0.15);
+  --shadow-comic: 0 6px 0 #1E080F;
+  --shadow-comic-lg: 0 10px 0 #1E080F;
+  --shadow-soft: 0 16px 36px -10px rgba(74, 18, 36, 0.12);
+
+  /* Typography */
+  --font-heading: 'Fredoka', 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cherry-hero);
+  border-radius: 9999px;
+  border: 2px solid var(--bg-cream);
+}
+
+/* Hero Section (Boy-Coy Red Banner) */
+.hero-wrapper {
+  background-color: var(--cherry-hero);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
+/* Floating Corner Ribbon (Boy-Coy Special Mention) */
+.corner-ribbon {
+  position: absolute;
+  top: 24px;
+  right: -36px;
+  transform: rotate(45deg);
+  background: #06D6A0;
+  color: #1E080F;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 40;
+  border: 1.5px dashed #1E080F;
+}
+
+/* Header & Nav */
+.header-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 30;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1E080F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+/* Nav Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.nav-link-active {
+  background: #1E080F;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+}
+
+/* Pomegranate-Style Pill Buttons */
+.btn-pomegranate-cherry {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 9999px;
+  background: var(--cherry-burgundy);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 18px rgba(130, 0, 36, 0.4), 0 4px 0 #4A0314;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.btn-pomegranate-cherry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(130, 0, 36, 0.5), 0 6px 0 #4A0314;
+  background: #9A031E;
+}
+
+.btn-pomegranate-cherry:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(130, 0, 36, 0.3), 0 1px 0 #4A0314;
+}
+
+.btn-pomegranate-cream {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  color: var(--cherry-dark);
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2.5px solid var(--cherry-dark);
+  box-shadow: 0 4px 0 var(--cherry-dark);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.btn-pomegranate-cream:hover {
+  background: var(--bg-cream);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--cherry-dark);
+}
+
+.btn-pomegranate-cream:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--cherry-dark);
+}
+
+/* Green Circular Download Stamp (Boy-Coy Screenshot 2) */
+.circle-stamp-green {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  background: #84CC16;
+  border: 3px solid #1E080F;
+  box-shadow: 0 6px 0 #1E080F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1E080F;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.circle-stamp-green:hover {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+/* Retro TV Monitor Frame (Boy-Coy Screenshot 2) */
+.tv-monitor-frame {
+  position: relative;
+  background: #252022;
+  border: 6px solid #140F11;
+  border-radius: 36px;
+  padding: 24px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.45),
+    0 10px 0 #0C090A;
+  margin: 80px auto 40px;
+  max-width: 1100px;
+}
+
+.tv-monitor-screen {
+  background: #FFFFFF;
+  border: 4px solid #140F11;
+  border-radius: 24px;
+  padding: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Slider Drag Handle */
+.retro-slider-handle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--cherry-hero);
+  border: 3.5px solid #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3), 0 0 0 2px #1E080F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: ew-resize;
+}
+
+/* Pomegranate Illustrated Card */
+.pomegranate-card {
+  background: #FFFFFF;
+  border: 2.5px solid var(--cherry-dark);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow-comic);
+  transition: all 0.25s ease;
+}
+
+.pomegranate-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-comic-lg);
+}
+
+/* Hand-Drawn Annotation Text */
+.hand-annotation {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  color: var(--cherry-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-style: italic;
+}
+
+/* Section Container */
+.content-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  position: relative;
+}
+
+/* Animations for Pointer & Scroll Effects */
+@keyframes pointerRipple {
+  0% {
+    width: 6px;
+    height: 6px;
+    opacity: 0.95;
+    border-color: #FF2E63;
+  }
+  100% {
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+    border-color: #FFD166;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes floatCounter {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 46, 99, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 46, 99, 0.75), 0 0 10px #FFD166;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-float-counter {
+  animation: floatCounter 6s ease-in-out infinite;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
